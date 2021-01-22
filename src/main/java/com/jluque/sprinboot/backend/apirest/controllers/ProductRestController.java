@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +21,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jluque.sprinboot.backend.apirest.models.entity.Product;
-import com.jluque.sprinboot.backend.apirest.models.entity.Usuario;
 import com.jluque.sprinboot.backend.apirest.models.services.IProductService;
 
 @CrossOrigin()
@@ -78,6 +78,25 @@ public class ProductRestController {
 		}
 
 		return new ResponseEntity<List<Product>>(productList, HttpStatus.OK);
+	}
+	
+	@PostMapping("/products")
+	public ResponseEntity<?> create(@RequestBody Product product) {
+
+		Map<String, Object> response = new HashMap<>();
+
+		try {
+			productService.save(product);
+
+		} catch (DataAccessException e) {
+			response.put("mensaje", "Error inserting this product on the database");
+			response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
+			return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
+		}
+		response.put("mensaje", "The product has been inserted correctly at the database");
+		response.put("product", product);
+
+		return new ResponseEntity<Map<String, Object>>(response, HttpStatus.OK);
 	}
 	
 	@Secured({ "ROLE_ADMIN", "ROLE_USER" })
