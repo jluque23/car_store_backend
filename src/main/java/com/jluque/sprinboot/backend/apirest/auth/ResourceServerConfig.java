@@ -15,17 +15,19 @@ import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
+import com.jluque.sprinboot.backend.apirest.enums.ResourceServerConfigEnums;
+
 @Configuration
 @EnableResourceServer
 public class ResourceServerConfig extends ResourceServerConfigurerAdapter{
-
+	
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests().antMatchers(HttpMethod.GET,"/api/uploads/img/**","/images/**","/api/usuarios/**","/api/bugs","/api/bugs/**","/api/comentariosbug","/api/comentariosbug/**","/api/productlines","/api/productlines/**","/api/products","/api/products/**","/api/products/findbyproductline/**","/api/offices","/api/offices/**").permitAll()
+		http.authorizeRequests().antMatchers(HttpMethod.GET, ResourceServerConfigEnums.GET_MATCHERS).permitAll()
 		.antMatchers(HttpMethod.GET,"/api/bugs").permitAll()
-		.antMatchers(HttpMethod.POST, "/api/usuarios","/api/notifications","/api/productlines").permitAll()
-		.antMatchers(HttpMethod.PUT, "/api/usuarios/**","/api/productlines/**").permitAll()
-		.antMatchers(HttpMethod.DELETE, "/api/usuarios/**","/api/offices/**").permitAll()
+		.antMatchers(HttpMethod.POST, ResourceServerConfigEnums.POST_MATCHERS).permitAll()
+		.antMatchers(HttpMethod.PUT, ResourceServerConfigEnums.PUT_MATCHERS).permitAll()
+		.antMatchers(HttpMethod.DELETE, ResourceServerConfigEnums.DELETE_MATCHERS).permitAll()
 		.anyRequest().authenticated()
 		.and().cors().configurationSource(corsConfigurationSource());
 	}

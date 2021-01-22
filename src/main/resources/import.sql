@@ -152,3 +152,28 @@ insert into offices(id,city,phone,address_line_1,address_line_2,state,country,po
 insert into offices(id,city,phone,address_line_1,address_line_2,state,country,postal_code,territory,create_at) values (5,'Tokyo','+81 33 224 5000','4-1 Kioicho',NULL,'Chiyoda-Ku','Japan','102-8578','Japan',now());
 insert into offices(id,city,phone,address_line_1,address_line_2,state,country,postal_code,territory,create_at) values (6,'Sydney','+61 2 9264 2451','5-11 Wentworth Avenue','Floor #2',NULL,'Australia','NSW 2010','APAC',now());
 insert into offices(id,city,phone,address_line_1,address_line_2,state,country,postal_code,territory,create_at) values (7,'London','+44 20 7877 2041','25 Old Broad Street','Level 7',NULL,'UK','EC2N 1HN','EMEA',now());
+
+/* insert into employees */
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1002,'Murphy','Diane','x5800','dmurphy@classicmodelcars.com','1',NULL,'President',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1056,'Patterson','Mary','x4611','mpatterso@classicmodelcars.com','1',1002,'VP Sales',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1076,'Firrelli','Jeff','x9273','jfirrelli@classicmodelcars.com','1',1002,'VP Marketing',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1088,'Patterson','William','x4871','wpatterson@classicmodelcars.com','6',1056,'Sales Manager (APAC)',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1102,'Bondur','Gerard','x5408','gbondur@classicmodelcars.com','4',1056,'Sale Manager (EMEA)',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1143,'Bow','Anthony','x5428','abow@classicmodelcars.com','1',1056,'Sales Manager (NA)',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1165,'Jennings','Leslie','x3291','ljennings@classicmodelcars.com','1',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1166,'Thompson','Leslie','x4065','lthompson@classicmodelcars.com','1',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1188,'Firrelli','Julie','x2173','jfirrelli@classicmodelcars.com','2',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1216,'Patterson','Steve','x4334','spatterson@classicmodelcars.com','2',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1286,'Tseng','Foon Yue','x2248','ftseng@classicmodelcars.com','3',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1323,'Vanauf','George','x4102','gvanauf@classicmodelcars.com','3',1143,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1337,'Bondur','Loui','x6493','lbondur@classicmodelcars.com','4',1102,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1370,'Hernandez','Gerard','x2028','ghernande@classicmodelcars.com','4',1102,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1401,'Castillo','Pamela','x2759','pcastillo@classicmodelcars.com','4',1102,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1501,'Bott','Larry','x2311','lbott@classicmodelcars.com','7',1102,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1504,'Jones','Barry','x102','bjones@classicmodelcars.com','7',1102,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1611,'Fixter','Andy','x101','afixter@classicmodelcars.com','6',1088,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1612,'Marsh','Peter','x102','pmarsh@classicmodelcars.com','6',1088,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1619,'King','Tom','x103','tking@classicmodelcars.com','6',1088,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1621,'Nishi','Mami','x101','mnishi@classicmodelcars.com','5',1056,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1625,'Kato','Yoshimi','x102','ykato@classicmodelcars.com','5',1621,'Sales Rep',now());
+insert  into employees(id,last_name,first_name,extension,email,office_id,reports_to_id,job_title,create_at) values (1702,'Gerard','Martin','x2312','mgerard@classicmodelcars.com','4',1102,'Sales Rep',now());
