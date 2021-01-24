@@ -20,10 +20,12 @@ public class ResourceServerConfigEnums {
 	private static final String EMPLOYEES = "/api/employees";
 	private static final String EMPLOYEES_ID = "/api/employees/**";
 	private static final String NOTIFICATIONS = "/api/notifications";
+	private static final String CUSTOMERS = "/api/customers";
+	private static final String CUSTOMERS_PAGE = "/api/customers/page/**";
 
 	
 	public static final String[] GET_MATCHERS = {UPLOADS,IMAGES,USUARIOS_ID,BUGS,BUGS_ID,COMENTARIOS_BUG,COMENTARIOS_BUG_ID,PRODUCT_LINES,PRODUCT_LINES_ID
-			,PRODUCTS,PRODUCTS_ID,PRODUCTS_BY_PRODUCT_LINE_ID,OFFICES,OFFICES_ID,EMPLOYEES,EMPLOYEES_ID};
+			,PRODUCTS,PRODUCTS_ID,PRODUCTS_BY_PRODUCT_LINE_ID,OFFICES,OFFICES_ID,EMPLOYEES,EMPLOYEES_ID,CUSTOMERS,CUSTOMERS_PAGE};
 		
 	public static final String[] POST_MATCHERS = {USUARIOS,NOTIFICATIONS,PRODUCT_LINES,EMPLOYEES};
 	
