@@ -31,5 +31,5 @@ public class ResourceServerConfigEnums {
 	
 	public static final String[] PUT_MATCHERS = {USUARIOS_ID,PRODUCT_LINES_ID};
 	
-	public static final String[] DELETE_MATCHERS = {USUARIOS_ID, OFFICES_ID,EMPLOYEES};
+	public static final String[] DELETE_MATCHERS = {USUARIOS_ID, OFFICES_ID,EMPLOYEES_ID};
 }

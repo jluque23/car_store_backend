@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -34,7 +35,7 @@ public class CustomerRestController {
 	@GetMapping("/customers/page/{page}")
 	@ResponseStatus(HttpStatus.OK)
 	public Page<Customer> index(@PathVariable Integer page){
-		Pageable pageable = PageRequest.of(page, 20);
+		Pageable pageable = PageRequest.of(page, 10);
 		return customerService.findAll(pageable);
 	}
 	

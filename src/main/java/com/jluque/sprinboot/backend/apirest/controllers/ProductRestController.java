@@ -6,6 +6,9 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
@@ -57,6 +60,13 @@ public class ProductRestController {
 		}
 
 		return new ResponseEntity<Product>(product, HttpStatus.OK);
+	}
+	
+	@GetMapping("/products/page/{page}")
+	@ResponseStatus(HttpStatus.OK)
+	public Page<Product> index(@PathVariable Integer page){
+		Pageable pageable = PageRequest.of(page, 10);
+		return productService.findAll(pageable);
 	}
 	
 	@GetMapping("/products/findbyproductline/{productLineId}")
